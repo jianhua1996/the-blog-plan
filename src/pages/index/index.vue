@@ -1,11 +1,20 @@
 <template>
   <div class="index-wrapper">
-    <Card v-for="item in articles" :key="item.id" :item="item"></Card>
+    <Card
+      v-for="item in articles"
+      :key="item.id"
+      :item="item"
+      @click-header="
+        $router.push({
+          path: '/details',
+        })
+      "
+    ></Card>
   </div>
 </template>
 
 <script>
-import Card from "@/components/card.vue"
+import Card from "@/components/Card.vue"
 export default {
   components: {
     Card,
@@ -40,9 +49,6 @@ export default {
 
 <style lang="less" scoped>
 .index-wrapper {
-  width: 100%;
-  height: 2000px;
-  box-sizing: border-box;
-  padding: 20px 80px;
+ 
 }
 </style>

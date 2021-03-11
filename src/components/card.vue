@@ -1,7 +1,7 @@
 <template>
   <el-card shadow="hover" class="box-card">
     <template #header>
-      <div class="card-header">{{ item.title || "这是标题" }}</div>
+      <div @click="$emit('click-header')" class="card-header">{{ item.title || "这是标题" }}</div>
     </template>
     <div class="card-content">
       <p>{{ item.content ? cutText(item.content) : "这是内容" }}</p>
@@ -44,7 +44,7 @@ export default {
     height: 42vh;
     padding: 10px 30px 20px;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 2%;
     .el-card__header {
       font-size: 26px;
       font-weight: bold;
@@ -69,9 +69,10 @@ export default {
       span {
         display: block;
         padding: 4px;
-        border-radius: 4px;
+        border-radius: 5px;
         background: var(--main-clor);
         color: #fff;
+        user-select: none;
         &:not(:first-of-type) {
           margin-left: 10px;
         }

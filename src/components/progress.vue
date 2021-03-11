@@ -11,7 +11,7 @@ import { ref, onMounted } from "vue"
 export default {
   setup(props) {
     let percent = ref(0)
-    const srollEvent = e => {
+    const scrollEvent = e => {
       const currentPx = document.scrollingElement.scrollTop
       const totalPx =
         document.scrollingElement.scrollHeight -
@@ -21,7 +21,7 @@ export default {
       // console.log(percent)
     }
     onMounted(() => {
-      document.addEventListener("scroll", srollEvent)
+      document.addEventListener("scroll", scrollEvent)
     })
     return {
       percent,
